@@ -35,15 +35,17 @@ export default {
       name: "张三",
     };
   },
-  setup() {
+  setup(props, context) {
+    console.log(props)
+    // console.log(context)
     //reactive定义复杂的数据类型的数据
     const reactiveNum1 = reactive({
       test: 1,
     }); 
     //ref推荐定义基本数据类型
     const refNum2 = ref(100); 
-    console.log("reactive", reactiveNum1);
-    console.log("ref", refNum2);
+    // console.log("reactive", reactiveNum1);
+    // console.log("ref", refNum2);
 
     const name = ref("李四");
     const age = ref(18);
@@ -53,8 +55,8 @@ export default {
     };
 
     const store = useStore();
-    console.log(store);
-    console.log(store.state);
+    // console.log(store);
+    // console.log(store.state);
     const change = () => {
       console.log(123);
       store.state.user = "状态2";
