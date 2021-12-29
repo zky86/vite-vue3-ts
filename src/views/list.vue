@@ -5,28 +5,33 @@
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
-import { useRoute, useRouter } from "vue-router";
+import { defineComponent, ref, getCurrentInstance } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+
 export default defineComponent({
-  name: "listPage",
+  name: 'ListPage',
   setup() {
-    const $route = useRoute();
-    const $router = useRouter();
+    // 获取上下文，类似原来的this
+    const { ctx } = getCurrentInstance()
+    console.log('ctx', ctx)
+    const $route = useRoute()
+    const $router = useRouter()
     // console.log($route);
     // console.log($router);
-    console.log($route.params);
-    const para = ref(0);
+    console.log($router)
+    console.log($route.params)
+    const para = ref(0)
     // console.log(para);
-    para.value = $route.params.id;
+    para.value = $route.params.id
     return {
-      para,
-    };
+      para
+    }
     // const curRout = '/' + window.location.href.split('/').pop();
     // return {
     //   activeIndex: curRout === '/' ? '/home' : curRout,
     // }
-  },
-});
+  }
+})
 </script>
 
 <style lang="scss" scoped>
