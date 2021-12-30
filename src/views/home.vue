@@ -80,12 +80,14 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-.home-page
-  font-size: 20px
-  li
-    display: inline-block
-    font-size: 20px
-    margin: 0 20px
-    color: $primary
+<style lang="scss" scoped>
+.home-page {
+  font-size: 20px;
+  li {
+    display: inline-block;
+    font-size: 20px;
+    margin: 0 20px;
+    // color: $primary;
+  }
+}
 </style>

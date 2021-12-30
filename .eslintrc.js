@@ -25,15 +25,7 @@ module.exports = {
   rules: {
     'prettier/prettier': 'error',
     'linebreak-style': 0,
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: [
-          'test/**', // tape, common npm pattern
-        ],
-        optionalDependencies: false,
-      },
-    ],
+    'import/no-extraneous-dependencies': ["error", {"devDependencies": true}],
     'no-param-reassign': [
       'error',
       {
