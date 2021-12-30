@@ -23,24 +23,31 @@
   <div>
     {{ reactiveNum1.test }}
   </div>
+
+  <div>状态管理：</div>
+  <el-button icon="el-icon-eleme" type="primary" size="mini" @click="increment"
+    >测试状态管理 增加</el-button
+  >
+  <p>vuex-module：{{ count1 }}</p>
+  <p>vuex-module-getters: {{ moduleGetters }}</p>
 </template>
 
 <script lang="ts">
 import { useStore } from 'vuex'
-import { ref, reactive, defineComponent } from 'vue'
+import { ref, reactive, defineComponent, computed } from 'vue'
 import { key } from '../store'
 
 export default defineComponent({
   name: 'HomePage',
   setup(props, context) {
-    console.log(props)
-    // console.log(context)
+    console.log('props', props)
+    console.log('context', context)
     // reactive定义复杂的数据类型的数据
     const reactiveNum1 = reactive({
       test: 1
     })
     // ref推荐定义基本数据类型
-    const refNum2 = ref(100)
+    // const refNum2 = ref(100)
     // console.log("reactive", reactiveNum1);
     // console.log("ref", refNum2);
 
@@ -55,10 +62,9 @@ export default defineComponent({
     console.log(store.state.count)
     // console.log(store);
     // console.log(store.state);
-    // const change = () => {
-    //   console.log(123)
-    //   store.state.user = '状态2'
-    // }
+    const change = () => {
+      store.state.user = '状态2'
+    }
     // console.log(store.state);
 
     // const curRout = '/' + window.location.href.split('/').pop();
@@ -70,8 +76,11 @@ export default defineComponent({
       name,
       age,
       plusOne,
-      // change,
-      reactiveNum1
+      change,
+      reactiveNum1,
+      count1: computed(() => store.state.count),
+      moduleGetters: computed(() => store.getters.getCount),
+      increment: () => store.commit('increment')
     }
   },
   data() {
