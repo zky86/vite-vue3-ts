@@ -8,6 +8,12 @@ import './styles/color.scss'
 import router from './router'
 // import 'element-plus/dist/index.css'
 import App from './App.vue'
-import store from './store'
+// import store from './store'
+import { store, key } from './store'
 
-createApp(App).use(router).use(ElementPlus, { locale }).use(store).mount('#app')
+console.log(key)
+createApp(App)
+  .use(router)
+  .use(ElementPlus, { locale })
+  .use(store, key)
+  .mount('#app')

@@ -28,6 +28,7 @@
 <script lang="ts">
 import { useStore } from 'vuex'
 import { ref, reactive, defineComponent } from 'vue'
+import { key } from '../store'
 
 export default defineComponent({
   name: 'HomePage',
@@ -50,13 +51,14 @@ export default defineComponent({
       age.value++ // 想改变值或获取值 必须.value
     }
 
-    const store = useStore()
+    const store = useStore(key)
+    console.log(store.state.count)
     // console.log(store);
     // console.log(store.state);
-    const change = () => {
-      console.log(123)
-      store.state.user = '状态2'
-    }
+    // const change = () => {
+    //   console.log(123)
+    //   store.state.user = '状态2'
+    // }
     // console.log(store.state);
 
     // const curRout = '/' + window.location.href.split('/').pop();
@@ -68,7 +70,7 @@ export default defineComponent({
       name,
       age,
       plusOne,
-      change,
+      // change,
       reactiveNum1
     }
   },

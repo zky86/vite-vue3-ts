@@ -1,13 +1,22 @@
-import { createStore } from 'vuex'
+// store.ts
+import { InjectionKey } from 'vue'
+import { createStore, Store } from 'vuex'
 
-const store = createStore({
+// 为 store state 声明类型
+export interface State {
+  count: number
+}
+
+// 定义 injection key
+// eslint-disable-next-line symbol-description
+export const key: InjectionKey<Store<State>> = Symbol()
+
+export const store = createStore<State>({
   state: {
-    user: '状态1'
+    count: 0
   },
   getters: {},
   mutations: {},
   actions: {},
   modules: {}
 })
-
-export default store
