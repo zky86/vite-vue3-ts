@@ -5,18 +5,18 @@
   <router-view />
 </template>
 
-<script>
-import headerMenu from "./layout/headerMenu.vue";
+<script lang="ts">
+import { defineComponent } from 'vue'
+import headerMenu from './layout/headerMenu.vue'
 // import HelloWorld from "./components/HelloWorld.vue";
-export default {
-  name: "App",
+export default defineComponent({
+  name: 'App',
   components: {
     // HelloWorld: HelloWorld,
-    headerMenu: headerMenu,
-  },
-};
+    headerMenu
+  }
+})
 </script>
-
 
 <style>
 #app {
