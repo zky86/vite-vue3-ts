@@ -25,11 +25,11 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { useStore } from 'vuex'
-import { ref, reactive } from 'vue'
+import { ref, reactive, defineComponent } from 'vue'
 
-export default {
+export default defineComponent({
   name: 'HomePage',
   setup(props, context) {
     console.log(props)
@@ -77,7 +77,7 @@ export default {
       name: '张三'
     }
   }
-}
+})
 </script>
 
 <style lang="scss" scoped>
