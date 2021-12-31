@@ -4,11 +4,19 @@
     <p>状态管理</p>
     <p>状态数据：{{ $store.state.user }}</p>
   </div>
+  <div>组件：</div>
+  <test-msg msg="测试组件" />
 </template>
 
 <script>
+import testMsg from '../components/testMsg.vue'
+
 export default {
   name: 'DetailPage',
+  components: {
+    // HelloWorld: HelloWorld,
+    testMsg
+  },
   setup() {
     // const curRout = '/' + window.location.href.split('/').pop();
     // return {

@@ -9,6 +9,20 @@ export default defineConfig({
       scss: {
         // additionalData: `@import './src/styles/color.scss';`
       }
+    },
+    postcss: {
+      plugins: [
+        {
+          postcssPlugin: 'internal:charset-removal',
+          AtRule: {
+            charset: (atRule) => {
+              if (atRule.name === 'charset') {
+                atRule.remove()
+              }
+            }
+          }
+        }
+      ]
     }
   }
   // css: {
