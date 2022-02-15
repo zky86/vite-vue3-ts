@@ -30,15 +30,24 @@
   >
   <p>vuex-module：{{ count1 }}</p>
   <p>vuex-module-getters: {{ moduleGetters }}</p>
+
+  <br />
+  <p>父子组件通信：</p>
+  <p>todo-list: <todo-list msg="测试组件" /></p>
 </template>
 
 <script lang="ts">
 import { useStore } from 'vuex'
 import { ref, reactive, defineComponent, computed } from 'vue'
 import { key } from '../store'
+import todoList from './todoList.vue'
 
 export default defineComponent({
   name: 'HomePage',
+  components: {
+    // HelloWorld: HelloWorld,
+    todoList
+  },
   setup(props, context) {
     console.log('props', props)
     console.log('context', context)
@@ -85,7 +94,7 @@ export default defineComponent({
   },
   data() {
     return {
-      name: '张三'
+      // name: '张三'
     }
   }
 })
