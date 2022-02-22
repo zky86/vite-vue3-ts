@@ -60,11 +60,11 @@ export default defineComponent({
     // console.log("reactive", reactiveNum1);
     // console.log("ref", refNum2);
 
-    const name = ref('李四')
-    const age = ref(18)
+    const name = ref<string>('李四')
+    const age = ref<number>(18)
     // console.log(age)
     const plusOne = () => {
-      age.value++ // 想改变值或获取值 必须.value
+      age.value += 1 // 想改变值或获取值 必须.value
     }
 
     const store = useStore(key)

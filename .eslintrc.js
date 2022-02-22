@@ -3,29 +3,29 @@ module.exports = {
   env: {
     browser: true, // browser global variables
     // adds all ECMAScript 2021 globals and automatically sets the ecmaVersion parser option to 12.
-    es2021: true,
+    es2021: true
   },
   extends: [
     'plugin:vue/vue3-recommended',
     'airbnb-base',
-    'plugin:prettier/recommended',
+    'plugin:prettier/recommended'
   ],
   plugins: ['@typescript-eslint', 'prettier'],
   parserOptions: {
     ecmaVersion: 12,
-    parser: '@typescript-eslint/parser',
+    parser: '@typescript-eslint/parser'
   },
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-    },
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
+      }
+    }
   },
   rules: {
     'prettier/prettier': 'error',
     'linebreak-style': 0,
-    'import/no-extraneous-dependencies': ["error", {"devDependencies": true}],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'no-param-reassign': [
       'error',
       {
@@ -42,9 +42,9 @@ module.exports = {
           'response', // for Express responses
           '$scope', // for Angular 1 scopes
           'staticContext', // for ReactRouter context
-          'state', // for vuex state
-        ],
-      },
+          'state' // for vuex state
+        ]
+      }
     ],
     'import/extensions': [
       'error',
@@ -53,15 +53,15 @@ module.exports = {
         js: 'never',
         mjs: 'never',
         jsx: 'never',
-        ts: 'never',
-      },
+        ts: 'never'
+      }
     ],
-    'no-console':  'off',
+    'no-console': 'off',
     'no-debugger': 'off',
     'object-curly-spacing': 'off',
     'space-before-function-paren': 'off',
-    'camelcase': 'off',
-    "template-curly-spacing": "off",
-    'indent': "off"
-  },
-};
+    camelcase: 'off',
+    'template-curly-spacing': 'off',
+    indent: 'off'
+  }
+}
