@@ -1,6 +1,6 @@
 // import { getAsyncComponent } from '../../util/lazyUtil.js'
 
-// eslint-disable-next-line import/prefer-default-export
+
 export const routes = [
   {
     path: '/',
