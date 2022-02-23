@@ -33,5 +33,10 @@ export const routes = [
     name: 'table',
     path: '/table',
     component: () => import('../views/table')
+  },
+  {
+    name: 'typescriptTest',
+    path: '/typescriptTest',
+    component: () => import('../views/typescriptTest')
   }
 ]

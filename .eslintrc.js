@@ -54,10 +54,10 @@ module.exports = {
         mjs: 'never',
         jsx: 'never',
         ts: 'never',
-        tsx: "never"
+        tsx: 'never'
       }
     ],
-    //https://stackoverflow.com/questions/68551748/missing-file-extension-tsx-for-typescript-react-project
+    // https://stackoverflow.com/questions/68551748/missing-file-extension-tsx-for-typescript-react-project
     'no-console': 'off',
     'no-debugger': 'off',
     'object-curly-spacing': 'off',
@@ -65,6 +65,7 @@ module.exports = {
     camelcase: 'off',
     'template-curly-spacing': 'off',
     indent: 'off',
-    "import/prefer-default-export": 'off'  // 关掉Prefer default export报错 https://stackoverflow.com/questions/52627477/eslint-prefer-default-export-import-prefer-default-export
+    'prefer-const': 0,
+    'import/prefer-default-export': 'off' // 关掉Prefer default export报错 https://stackoverflow.com/questions/52627477/eslint-prefer-default-export-import-prefer-default-export
   }
 }
