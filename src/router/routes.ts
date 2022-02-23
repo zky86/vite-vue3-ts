@@ -29,6 +29,11 @@ export const routes = [
   {
     name: 'product',
     path: '/product',
-    component: () => import('../views/product')
+    component: () => import('../views/product.tsx')
+  },
+  {
+    name: 'table',
+    path: '/table',
+    component: () => import('../views/table.tsx')
   }
 ]
