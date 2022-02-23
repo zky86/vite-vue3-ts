@@ -1,6 +1,4 @@
 // import { getAsyncComponent } from '../../util/lazyUtil.js'
-
-
 export const routes = [
   {
     path: '/',
@@ -29,11 +27,11 @@ export const routes = [
   {
     name: 'product',
     path: '/product',
-    component: () => import('../views/product.tsx')
+    component: () => import('../views/product')
   },
   {
     name: 'table',
     path: '/table',
-    component: () => import('../views/table.tsx')
+    component: () => import('../views/table')
   }
 ]
