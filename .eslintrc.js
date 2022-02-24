@@ -66,6 +66,8 @@ module.exports = {
     'template-curly-spacing': 'off',
     indent: 'off',
     'prefer-const': 0,
-    'import/prefer-default-export': 'off' // 关掉Prefer default export报错 https://stackoverflow.com/questions/52627477/eslint-prefer-default-export-import-prefer-default-export
+    'import/prefer-default-export': 'off', // 关掉Prefer default export报错 https://stackoverflow.com/questions/52627477/eslint-prefer-default-export-import-prefer-default-export
+    'vue/require-default-prop': 'off',
+    "allowForLoopAfterthoughts": true //允许++写法
   }
 }
