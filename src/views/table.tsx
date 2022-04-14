@@ -53,18 +53,17 @@ export default defineComponent({
         width: 180,
         render: (row, column, cellValue, index) => {
           return (
-            <div>
-              <span
-                class='num-down'
-                {...{
-                  onClick: () => {
-                    delOne(index)
-                  }
-                }}
-              >
-                删除
-              </span>
-            </div>
+            <el-button
+              type='text'
+              size='small'
+              {...{
+                onClick: () => {
+                  delOne(index)
+                }
+              }}
+            >
+              删除
+            </el-button>
           )
         }
       }
@@ -72,7 +71,7 @@ export default defineComponent({
 
     const tableData = ref([
       {
-        date: '2016-05-03',
+        date: '2016-05-01',
         name: 'Tom',
         address: 'No. 189, Grove St, Los Angeles'
       },
@@ -82,12 +81,12 @@ export default defineComponent({
         address: 'No. 189, Grove St, Los Angeles'
       },
       {
-        date: '2016-05-04',
+        date: '2016-05-03',
         name: 'Tom',
         address: 'No. 189, Grove St, Los Angeles'
       },
       {
-        date: '2016-05-01',
+        date: '2016-05-04',
         name: 'Tom',
         address: 'No. 189, Grove St, Los Angeles'
       }
