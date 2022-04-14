@@ -31,6 +31,45 @@ export default defineComponent({
       }
     ])
 
+    const columns = ref([
+      {
+        prop: 'date',
+        label: 'Date',
+        width: 180
+      },
+      {
+        prop: 'name',
+        label: 'Name',
+        width: 180
+      },
+      {
+        prop: 'address',
+        label: 'Address',
+        width: 180
+      },
+      {
+        prop: '',
+        label: '操作',
+        width: 180,
+        render: (row, column, cellValue, index) => {
+          return (
+            <div>
+              <span
+                class='num-down'
+                {...{
+                  onClick: () => {
+                    delOne(index)
+                  }
+                }}
+              >
+                删除
+              </span>
+            </div>
+          )
+        }
+      }
+    ])
+
     const tableData = ref([
       {
         date: '2016-05-03',
@@ -125,6 +164,16 @@ export default defineComponent({
           </el-button>
 
           <el-table data={tableData.value} style='width: 100%'>
+            {columns.value.map((item) => (
+              <el-table-column
+                prop={item.prop}
+                label={item.label}
+                width={item.width}
+                formatter={item.render}
+              ></el-table-column>
+            ))}
+
+            {/* <el-table data={tableData.value} style='width: 100%'>
             <el-table-column prop='date' label='Date' width='180' />
             <el-table-column prop='name' label='Name' width='180' />
             <el-table-column prop='address' label='Address' />
@@ -153,7 +202,7 @@ export default defineComponent({
                   )
                 }
               }}
-            ></el-table-column>
+            ></el-table-column>  */}
 
             {/* <el-table-column
               label='Test'
