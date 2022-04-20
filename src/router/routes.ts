@@ -38,5 +38,10 @@ export const routes = [
     name: 'typescriptTest',
     path: '/typescriptTest',
     component: () => import('../views/typescriptTest')
+  },
+  {
+    name: 'ref',
+    path: '/ref',
+    component: () => import('../views/ref')
   }
 ]

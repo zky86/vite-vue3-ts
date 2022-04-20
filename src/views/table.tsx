@@ -5,6 +5,30 @@ import './table.scss'
 export default defineComponent({
   setup() {
     const router = useRouter()
+
+    const shortcuts = [
+      {
+        text: 'Today',
+        value: new Date(),
+      },
+      {
+        text: 'Yesterday',
+        value: () => {
+          const date = new Date()
+          date.setTime(date.getTime() - 3600 * 1000 * 24)
+          return date
+        },
+      },
+      {
+        text: 'A week ago',
+        value: () => {
+          const date = new Date()
+          date.setTime(date.getTime() - 3600 * 1000 * 24 * 7)
+          return date
+        },
+      },
+    ]
+
     const name = ref('')
     const select = ref('')
     const data = ref('')
@@ -153,7 +177,7 @@ export default defineComponent({
                 v-model={data.value}
                 type='date'
                 placeholder='Pick a day'
-                shortcuts='shortcuts'
+                shortcuts={shortcuts}
                 value-format='YYYY-MM-DD'
               ></el-date-picker>
             </el-col>
