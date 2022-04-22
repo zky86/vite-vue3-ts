@@ -43,5 +43,10 @@ export const routes = [
     name: 'ref',
     path: '/ref',
     component: () => import('../views/ref')
+  },
+  {
+    name: 'form',
+    path: '/form',
+    component: () => import('../views/form')
   }
 ]
