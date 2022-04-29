@@ -1,4 +1,4 @@
-import { defineComponent, PropType, ref, onUnmounted } from 'vue'
+import { defineComponent, PropType, ref, onUnmounted ,defineExpose , reactive} from 'vue'
 
 export default defineComponent({
   props: {
@@ -13,8 +13,8 @@ export default defineComponent({
     onChangePswVisible: Function as PropType<(flag: boolean) => void>
   },
   emits: ['changePswVisible'],
-  setup(props, { slots, emit }) {
-    console.log(props)
+  setup(props, { slots, emit , expose}) {
+    // console.log(props)
     const flag = ref<boolean>(false)
     const title = ref<string>('xixi')
 
@@ -24,9 +24,16 @@ export default defineComponent({
       count.value++
     }, 2000)
 
+
+    const b = ref('2')
+
     onUnmounted(() => {
       clearInterval(timer)
     })
+
+    // expose(() => {
+    //   b:2
+    // })
 
     return () => (
       <div class='child'>

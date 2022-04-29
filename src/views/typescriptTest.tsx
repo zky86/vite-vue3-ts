@@ -1,4 +1,4 @@
-import { defineComponent, reactive, ref } from 'vue'
+import { defineComponent, onMounted, reactive, ref } from 'vue'
 import './table.scss'
 import componentTest from './componentTest'
 
@@ -8,10 +8,20 @@ export default defineComponent({
     componentTest
   },
   setup() {
+    const refTest = ref(null)
+
+    onMounted(() => {
+      console.log('ref1', refTest.value)
+    })
+  
+    
+  
+
     const password = ref<string>('123')
     return () => (
       <>
         <componentTest
+          ref={refTest}
           type='success'
           size='large'
           v-slots={{

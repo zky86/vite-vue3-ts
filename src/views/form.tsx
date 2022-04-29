@@ -1,5 +1,7 @@
-import { defineComponent, reactive, ref, toRef, toRefs } from 'vue'
+import { defineComponent, reactive, ref, toRef, toRefs, onMounted } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
+import { isVue3 } from '_vue-demi@0.12.5@vue-demi'
+import { on } from 'element-plus/es/utils'
 
 export default defineComponent({
   setup() {
@@ -71,7 +73,7 @@ export default defineComponent({
     })
     const ruleFormRef = ref<FormInstance | null>()
     const submitForm = async (formEl: FormInstance | undefined) => {
-      console.log(formEl)
+      console.log('formEl', formEl)
       if (!formEl) return
 
       await formEl.value.validate((valid: any, fields: any) => {
@@ -89,8 +91,22 @@ export default defineComponent({
       formEl.value.resetFields()
     }
 
+    const refone = ref(null)
+    onMounted(() => {
+      console.log(134)
+      console.log(ruleFormRef.value)
+      ruleFormRef.value.clearValidate()
+      console.log(refone.value)
+    })
+    
+   
+    
+
+
     return () => (
       <>
+        <div ref={refone}>ref节点测试</div>
+        <br />
         <el-form
           ref={ruleFormRef}
           model={ruleForm}
